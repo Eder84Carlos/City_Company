@@ -2,26 +2,30 @@ package city_company.example.city_company.resource;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import city_company.example.city_company.entities.Cliente;
-import city_company.example.city_company.service.ClienteService;
+import city_company.example.city_company.reposotories.ClienteRepository;
 
+@RestController
+@RequestMapping("/clientes")
 public class ClienteResource {
 	
-	private ClienteService service;
+	@Autowired
+	private ClienteRepository repository;
 	
+	@GetMapping
 	public ResponseEntity<List<Cliente>> findAll(){
-		List<Cliente> list = service.findAll();
+		List<Cliente> list = repository.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
-	@GetMapping(value = "/{id}")
-	public ResponseEntity<Cliente> findById(@PathVariable Long id){
-		Cliente obj = service.findById(id);
-		return ResponseEntity.ok().body(obj);
+	public Cliente adicionar(Cliente cliente) {
+		return 
 	}
 
 }

@@ -2,11 +2,22 @@ package city_company.example.city_company.entities;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Cliente {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(nullable = false)
 	private String name;
 	private String email;
+	@Column(nullable = false)
 	private Integer cpf;
 	private Integer telefone;
 	
@@ -77,7 +88,5 @@ public class Cliente {
 			return false;
 		Cliente other = (Cliente) obj;
 		return Objects.equals(id, other.id);
-	}
-	
-	
+	}	
 }
