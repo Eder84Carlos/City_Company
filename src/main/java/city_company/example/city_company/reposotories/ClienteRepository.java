@@ -8,4 +8,6 @@ import city_company.example.city_company.entities.Cliente;
 @Repository
 public interface ClienteRepository extends JpaRepository <Cliente, Long>{
 
+	Cliente delete(Long id);
+
 }
