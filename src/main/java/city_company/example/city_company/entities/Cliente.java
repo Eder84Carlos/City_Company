@@ -1,5 +1,6 @@
 package city_company.example.city_company.entities;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,7 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Cliente {
+public class Cliente implements Serializable{
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,13 +20,13 @@ public class Cliente {
 	private String name;
 	private String email;
 	@Column(nullable = false)
-	private Integer cpf;
-	private Integer telefone;
+	private String cpf;
+	private String telefone;
 	
 	public Cliente() {
 	}
 
-	public Cliente(Long id, String name, String email, Integer cpf, Integer telefone) {
+	public Cliente(Long id, String name, String email, String cpf, String telefone) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -57,19 +59,19 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-	public Integer getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Integer telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 

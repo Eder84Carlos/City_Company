@@ -12,24 +12,24 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import city_company.example.city_company.entities.Cliente;
-import city_company.example.city_company.reposotories.ClienteRepository;
+import city_company.example.city_company.service.ClienteService;
 
 @RestController
 @RequestMapping("/clientes")
 public class ClienteResource {
 	
 	@Autowired
-	private ClienteRepository clienteRepository;
+	private ClienteService clienteService;
 	
 	@GetMapping
 	public List<Cliente> listar(){
-		return clienteRepository.findAll();
+		return clienteService.findAll();
 	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Cliente adicionar(@RequestBody Cliente cliente) {
-		return clienteRepository.save(cliente);
+		return clienteService.insert(cliente);
 	}
 
 }
