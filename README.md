@@ -9,3 +9,5 @@ Seguro de vida pode adicionar dependentes de acordo com a idade, onde valores s�
 Seguro de veiculo adiciona dependentes por idade com valor adicional para terceiros 
 
 Seguro residencial atende todos tipos de residencia!
+
+Projeto para avaliação!
