@@ -11,3 +11,5 @@ Seguro de veiculo adiciona dependentes por idade com valor adicional para tercei
 Seguro residencial atende todos tipos de residencia!
 
 Projeto para avaliação!
+
+## stand by ##
