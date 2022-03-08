@@ -13,3 +13,5 @@ Seguro residencial atende todos tipos de residencia!
 Projeto para avaliação!
 
 ## stand by ##
+
+Projeto parado devido a uma pesquisa solicitada pela faculdade!
